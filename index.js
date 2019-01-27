@@ -47,8 +47,8 @@ bot.on('message', message => {
     
     
      let guild = 538867865533677569;
-    let Humain = guild.roles.find(role => role.id === 538868210984943666);
-    let Robot = guild.roles.find(role => role.id === 538868260989435924);
+    let Humain = guild.roles.find(role => role.id === "538868210984943666");
+    let Robot = guild.roles.find(role => role.id === "538868260989435924");
 
     if (message.channel.type === 'dm') {
           if (message.content.startsWith(prefix + "humain")) {
