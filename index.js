@@ -54,19 +54,21 @@ if (message.author.bot) return;
     let Humain = guild.roles.find(role => role.id === "538868210984943666");
     let Robot = guild.roles.find(role => role.id === "538868260989435924");
 
-          if (message.content.startsWith(prefix + "humain")) {
-             // message.reply("Vous rejoignez le camp des Humains")
-                      message.member.addRole(Humain);
-         message.delete()
-message.author.sendMessage("Vous êtes désormais dans le camp des Humains !")
+    if (message.content.startsWith(prefix + "humain")) {
+        message.delete()
+    if (message.member.roles.has(Humain.id)||message.member.roles.has(Robot.id)) {
+    } else {
+        message.member.addRole(Humain);
+        message.author.sendMessage("Vous êtes désormais dans le camp des Humains !")
     }
         
      if (message.content.startsWith(prefix + "robot")) {
-             // message.reply("Vous rejoignez le camp des Robots")
          message.delete()
-                 message.member.addRole(Robot);
-         message.author.sendMessage("Vous êtes désormais dans le camp des Robots !")
+         if (message.member.roles.has(Robot.id)||message.member.roles.has(Humain.id)) {
+    } else {
+        message.member.addRole(Robot);
+        message.author.sendMessage("Vous êtes désormais dans le camp des Robots !")
 
-
+        }
     }
     })
