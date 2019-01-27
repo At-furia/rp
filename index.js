@@ -13,7 +13,7 @@ var randnum = 0;
 
 
 bot.on('ready', () => {
-    bot.user.setPresence({ game: { name: 'avec ton esprit.. - !help', type: 1}})
+    bot.user.setPresence({ game: { name: 'torturer ton esprit.. - !help', type: 1}})
     console.log("Bot Ready !");
     bot.user.setStatus("online")
 
