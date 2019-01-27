@@ -117,6 +117,8 @@ bot.on('message', message => {
     
  if(message.content.startsWith(prefix +'test')){
     let server = message.member.guild;
+         let guild = message.member.guild;
+
     var msgauthor = message.member.nickname;
     let logé = guild.roles.find(role => role.id === "539213131516477452");
      
