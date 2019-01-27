@@ -120,7 +120,11 @@ bot.on('message', message => {
 
 var msgauthor = message.member.nickname;
 
-    server.createChannel(`chambre-de-${msgauthor}`, "text")
+    server.createChannel(`chambre-de-${msgauthor}`, "text",[{
+        type: 'role',
+        name:'everyone',
+        deny:0x400
+       }])
         .then(channel => {
      let category = server.channels.find(c => c.name == "Chambres" && c.type == "category");
 
