@@ -61,14 +61,14 @@ if (message.author.bot) return;
         message.member.addRole(Humain);
         message.author.sendMessage("Vous êtes désormais dans le camp des Humains !")
     }
-        
-     if (message.content.startsWith(prefix + "robot")) {
-         message.delete()
-         if (message.member.roles.has(Robot.id)||message.member.roles.has(Humain.id)) {
+    }
+    
+    if (message.content.startsWith(prefix + "robot")) {
+        message.delete()
+    if (message.member.roles.has(Robot.id)||message.member.roles.has(Humain.id)) {
     } else {
         message.member.addRole(Robot);
         message.author.sendMessage("Vous êtes désormais dans le camp des Robots !")
-
-        }
+    }
     }
     })
