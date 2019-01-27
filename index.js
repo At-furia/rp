@@ -49,8 +49,8 @@ bot.on('message', message => {
 bot.on('message', function(message) {
     if (message.content === prefix + "mpall") {
 
-  var memberID = message.guild.members.filter(m=>m.roles.has('Homme')).map(m=>m.id) //pour récupérer les membre du rôle
- 
-  memberID.map(u => client.users.get(u).send("testeuuuu POUR DE VRAI")); // envoie le message
+      let homme = guild.roles.find(role => role.name === "Homme");
+        bot.sendMessage(message, homme.mention() + " test");
+
     }  
 })
