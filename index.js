@@ -61,5 +61,5 @@ bot.on('message', message => {
               message.reply("Vous rejoignez le camp des Robots")
                  message.member.addRole(Robot);
 
-    }
+    }}
     })
