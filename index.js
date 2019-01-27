@@ -54,13 +54,15 @@ bot.on('message', message => {
              // message.reply("Vous rejoignez le camp des Humains")
                       message.member.addRole(Humain);
          message.delete()
-
+message.author.sendMessage("Vous êtes désormais dans le camp des Humains !")
     }
         
      if (message.content.startsWith(prefix + "robot")) {
              // message.reply("Vous rejoignez le camp des Robots")
          message.delete()
                  message.member.addRole(Robot);
+         message.author.sendMessage("Vous êtes désormais dans le camp des Robots !")
+
 
     }
     })
