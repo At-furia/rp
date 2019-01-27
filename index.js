@@ -118,7 +118,7 @@ bot.on('message', message => {
        if(message.content.startsWith(prefix +'test')){
      let server = message.member.guild;
 
-var msgauthor = message.author.tag;
+var msgauthor = message.author;
 
     server.createChannel(`chambre-de-${msgauthor}`, "text")
         .then(channel => {
