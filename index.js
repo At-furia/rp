@@ -47,7 +47,9 @@ bot.on('message', message => {
         })
 
 bot.on('message', message => {
-    
+            if (message.channel.type === 'dm') return;
+if (message.author.bot) return;
+
     let guild = message.member.guild;
     let Humain = guild.roles.find(role => role.id === "538868210984943666");
     let Robot = guild.roles.find(role => role.id === "538868260989435924");
