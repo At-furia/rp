@@ -88,5 +88,29 @@ bot.on('message', message => {
     if(message.content.startsWith(prefix +'hist')){
     bot.channels.get("539098415997386752").send(message.content.slice(5, message.content.length));
         } 
+    if(message.content.startsWith(prefix +'g')){
+    bot.channels.get("538879113859956753").send(message.content.slice(2, message.content.length));
+        }
+    if(message.content.startsWith(prefix +'rue')){
+    bot.channels.get("539108946590564372").send(message.content.slice(4, message.content.length));
+        }  
+    if(message.content.startsWith(prefix +'mag')){
+    bot.channels.get("539108964399317002").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'res')){
+    bot.channels.get("539108988361637899").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'par')){
+    bot.channels.get("539109004195135528").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'for')){
+    bot.channels.get("539109026814754831").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'adu')){
+    bot.channels.get("539109125540413480").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'ter')){
+    bot.channels.get("538873604167696394").send(message.content.slice(4, message.content.length));
+        } 
     }
 })
