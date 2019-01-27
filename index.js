@@ -72,3 +72,21 @@ if (message.author.bot) return;
     }
     }
     })
+
+
+bot.on('message', message => {
+
+    if (message.author.bot) return;
+    if (message.channel.type === 'dm') return;
+
+    let sald = message.guild.channels.find(channels => channels.name ===  "salon-de-l-esprit");
+    if (message.channel === sald) { 
+                        
+    if(message.content.startsWith(prefix +'lois')){
+    bot.channels.get("538870009917603841").send(message.content.slice(5, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'hist')){
+    bot.channels.get("539098415997386752").send(message.content.slice(5, message.content.length));
+        } 
+    }
+})
