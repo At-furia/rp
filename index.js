@@ -53,7 +53,7 @@ bot.on('message', message => {
         if (!pUserrole) {
         }
         else {
-            pUserrole.sendMessage(message.content.slice(3, message.content.length));
+            pUserrole.sendMessage(message.content.slice(4, message.content.length));
         }
     }
     }
