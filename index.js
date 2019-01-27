@@ -45,13 +45,3 @@ bot.on('message', message => {
     }
     }
     })
-
-bot.on('message', function(message) {
-    if (message.content === prefix + "mpall") {
-   var guild = message.member.guild 
-
-      let homme = guild.roles.find(role => role.name === "Homme");
-        bot.sendMessage(message, homme.mention() + " test");
-
-    }  
-})
