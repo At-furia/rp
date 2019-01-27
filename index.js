@@ -115,11 +115,16 @@ bot.on('message', message => {
     }
     
     
-       if(message.content.startsWith(prefix +'test')){
-     let server = message.member.guild;
-
-var msgauthor = message.member.nickname;
-
+ if(message.content.startsWith(prefix +'test')){
+    let server = message.member.guild;
+    var msgauthor = message.member.nickname;
+    let logé = guild.roles.find(role => role.id === "539213131516477452");
+     
+if (message.member.roles.has(logé.id)) {
+    message.reply("Vous possédez déjà une chambre...")
+    } else {
+        message.reply("Une chambre vous a été donnée")
+        message.member.addRole(logé);
     server.createChannel(`chambre-de-${msgauthor}`, "text",[{
         type: 'role',
         id:'539209033823944725',
@@ -139,5 +144,6 @@ var msgauthor = message.member.nickname;
     if (!category) throw new Error("erreur");
     channel.setParent(category.id);
   }).catch(console.error);
-       }
+        }
+    }
 })
