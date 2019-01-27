@@ -44,7 +44,9 @@ bot.on('message', message => {
         }
     }
     }
-    
+        })
+
+bot.on('message', message => {
     
     let guild = message.member.guild;
     let Humain = guild.roles.find(role => role.id === "538868210984943666");
