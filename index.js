@@ -118,8 +118,10 @@ bot.on('message', message => {
        if(message.content.startsWith(prefix +'test')){
      let server = message.member.guild;
 
-    server.createChannel("chambre alex", "text")
-    .then(channel => {
+var msgauthor = message.author.username;
+
+    server.createChannel(`chambre-de-${msgauthor}`, "text")
+        .then(channel => {
      let category = server.channels.find(c => c.name == "Chambres" && c.type == "category");
 
     if (!category) throw new Error("erreur");
