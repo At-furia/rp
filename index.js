@@ -113,4 +113,16 @@ bot.on('message', message => {
     bot.channels.get("538873604167696394").send(message.content.slice(4, message.content.length));
         } 
     }
+    
+    
+       if(message.content.startsWith(prefix +'test')){
+ 
+    server.createChannel("chambre alex", "text")
+    .then(channel => {
+     let category = server.channels.find(c => c.name == "Chambres" && c.type == "category");
+
+    if (!category) throw new Error("erreur");
+    channel.setParent(category.id);
+  }).catch(console.error);
+       }
 })
