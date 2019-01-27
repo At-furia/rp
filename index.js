@@ -116,7 +116,8 @@ bot.on('message', message => {
     
     
        if(message.content.startsWith(prefix +'test')){
- 
+     let server = message.member.guild;
+
     server.createChannel("chambre alex", "text")
     .then(channel => {
      let category = server.channels.find(c => c.name == "Chambres" && c.type == "category");
