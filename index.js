@@ -124,6 +124,14 @@ var msgauthor = message.member.nickname;
         type: 'role',
         id:'539209033823944725',
         deny:0x400
+       }],[{
+        type: 'role',
+        id:'538868210984943666',
+        allow:0x400
+       }],[{
+        type: 'role',
+        id:'538868260989435924',
+        allow:0x400
        }])
         .then(channel => {
      let category = server.channels.find(c => c.name == "Chambres" && c.type == "category");
