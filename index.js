@@ -24,6 +24,7 @@ bot.on('ready', () => {
 bot.on('message', message => {
     let userVar = message.author
     let pUser = message.mentions.users.first()
+    let pUserR = message.mentions.roles.first()
 
     if (message.author.bot) return;
     if (message.channel.type === 'dm') {
@@ -41,6 +42,18 @@ bot.on('message', message => {
         }
         else {
             pUser.sendMessage(message.content.slice(3, message.content.length));
+        }
+    }
+    }
+    
+    if (message.content.startsWith(prefix + "mpr")) {
+                if(!message.member.roles.some(r=>["Présidents"].includes(r.name)) ) 
+                    return;
+                {
+        if (!pUserR) {
+        }
+        else {
+            pUserR.sendMessage(message.content.slice(3, message.content.length));
         }
     }
     }
