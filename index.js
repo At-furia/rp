@@ -24,7 +24,7 @@ bot.on('ready', () => {
 bot.on('message', message => {
     let userVar = message.author
     let pUser = message.mentions.users.first()
-    let pUserrole = message.mentions.role.first()
+    let pUserrole = message.mentions.roles.first()
 
     if (message.author.bot) return;
     if (message.channel.type === 'dm') {
