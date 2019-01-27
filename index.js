@@ -122,7 +122,7 @@ var msgauthor = message.member.nickname;
 
     server.createChannel(`chambre-de-${msgauthor}`, "text",[{
         type: 'role',
-        id:'359999680677019649',
+        id:'539209033823944725',
         deny:0x400
        }])
         .then(channel => {
