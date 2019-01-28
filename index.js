@@ -74,8 +74,8 @@ var msgauthor = message.author.username;
     .setColor("#FF0000")
     .setAuthor(msgauthor, message.author.avatarURL)
     .setTimestamp()
-    .addField("Vous avez choisis le camp des Robots","Objectif : Ne pas se faire repérer par un Humain, si l'un deux vous démasque et vous dénonce, vous serez tué...")
-    .setFooter("Si un Humain vous dénonce, vous mourrez et devez recommencer le rp depuis 0 MAIS, vous pouvez vous arranger avec l'Humain si vous ne souhaitez pas reprendre un rp à 0 : soit il ne vous dénonce pas, soit vous arrivez à vous échapper avant d'être tué, etc..")
+    .addField("Vous avez choisi le camp des Robots","Objectif : Ne pas vous faire repérer par un humain. Si l'un d'eux vous démasque et vous dénonce vous serez tué...")
+    .setFooter("Si un humain vous denonce, vous mourez et vous devez recommencer le RP. Vous pouvez bien entendu vous arranger avec l'humain afin qu'il ne vous dénonce pas ou encore imaginer une évasion avant d'être tué, à vous d'imaginer un scénario qui vous convient...")
         message.author.sendMessage(robot_embed);    
             }
     }
