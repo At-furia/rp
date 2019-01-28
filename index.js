@@ -68,7 +68,7 @@ if (message.author.bot) return;
     if (message.member.roles.has(Robot.id)||message.member.roles.has(Humain.id)) {
     } else {
         message.member.addRole(Robot);
-        message.author.sendMessage("Vous êtes désormais dans le camp des Robots !")
+        message.author.sendMessage("Vous êtes désormais dans le camp des Robots !\nVous devrez rester discret pour ne pas vous faire dénoncer par un Humain et être tué ..(et donc recommencer le rp à 0)\n*Vous pouvez vous arranger entre vous pour rester en vie si vous êtes découvert et ne pas recommencer à 0*")
     }
     }
     })
