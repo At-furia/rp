@@ -72,7 +72,7 @@ var msgauthor = message.author.username;
     
         const robot_embed = new Discord.RichEmbed()
     .setColor("#FF0000")
-    .setAuthor(msgauthor, msgauthor.avatarURL)
+    .setAuthor(msgauthor, message.author.avatarURL)
     .setTimestamp()
     .addField("Vous avez choisis le camp des Robots","Objectif : Ne pas se faire repérer par un Humain, si l'un deux vous démasque et vous dénonce, vous serez tué...")
     .setFooter("Si un Humain vous dénonce, vous mourrez et devez recommencer le rp depuis 0 MAIS, vous pouvez vous arranger avec l'Humain si vous ne souhaitez pas reprendre un rp à 0 : soit il ne vous dénonce pas, soit vous arrivez à vous échapper avant d'être tué, etc..")
