@@ -68,8 +68,14 @@ if (message.author.bot) return;
     if (message.member.roles.has(Robot.id)||message.member.roles.has(Humain.id)) {
     } else {
         message.member.addRole(Robot);
-        message.author.sendMessage("Vous êtes désormais dans le camp des Robots !\nVous devrez rester discret pour ne pas vous faire dénoncer par un Humain et être tué ..(et donc recommencer le rp à 0)\n*Vous pouvez vous arranger entre vous pour rester en vie si vous êtes découvert et ne pas recommencer à 0*")
-    }
+    
+        const robot_embed = new Discord.RichEmbed()
+  .setColor("#FF0000")
+  .setTimestamp()
+  .addField("Vous avez choisis le camp des Robots","Objectif : Ne pas se faire repérer par un Humain, si l'un deux vous démasque et vous dénonce, vous serez tué...")
+    .setFooter("Si un Humain vous dénonce, vous mourrez et devez recommencer le rp depuis 0 MAIS, vous pouvez vous arranger avec l'Humain si vous ne souhaitez pas reprendre un rp à 0 : soit il ne vous dénonce pas, soit vous arrivez à vous échapper avant d'être tué, etc..")
+        message.author.sendMessage(robot_embed);    
+            }
     }
     })
 
