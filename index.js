@@ -28,7 +28,7 @@ bot.on('message', message => {
     if (message.author.bot) return;
     if (message.channel.type === 'dm') {
       if(message.content.includes('@')){
-          message.reply("Impossible de répondre a votre demande si elle contient une mention")
+          message.reply("Impossible de répondre à votre demande si elle contient une mention")
          } else {
   //    message.delete()
         bot.channels.get("538883311301427200").send(message.content.slice(0, message.content.length)+ " " + userVar); 
@@ -129,7 +129,7 @@ bot.on('message', message => {
     }
     
     
- if(message.content.startsWith(prefix +'test')){
+ if(message.content.startsWith(prefix +'chambre')){
     let server = message.member.guild;
          let guild = message.member.guild;
 
