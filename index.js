@@ -60,7 +60,13 @@ var msgauthor = message.author.username;
     if (message.member.roles.has(Humain.id)||message.member.roles.has(Robot.id)) {
     } else {
         message.member.addRole(Humain);
-        message.author.sendMessage("Vous êtes désormais dans le camp des Humains !")
+const humain_embed = new Discord.RichEmbed()
+    .setColor("#FF0000")
+    .setAuthor(msgauthor, message.author.avatarURL)
+    .setTimestamp()
+    .addField("Vous avez choisi le camp des Humains","Objectif : Chercher et démasquer les Robots. Si vous démasquez l'un d'eux, vous avez alors le choix de le dénoncer, ne rien faire, ou alors le tuer...")
+    .setFooter("Vous ne pourrez tuer le robot que s'il est d'accord, à vous d'imaginer un scénario qui vous convient... ")
+        message.author.sendMessage(humain_embed);
     }
     }
     
