@@ -64,8 +64,8 @@ const humain_embed = new Discord.RichEmbed()
     .setColor("#FF0000")
     .setAuthor(msgauthor, message.author.avatarURL)
     .setTimestamp()
-    .addField("Vous avez choisi le camp des Humains","Objectif : Chercher et démasquer les Robots. Si vous démasquez l'un d'eux, vous avez alors le choix de le dénoncer, ne rien faire, ou alors le tuer...")
-    .setFooter("Vous ne pourrez tuer le robot que s'il est d'accord, à vous d'imaginer un scénario qui vous convient... ")
+    .addField("Vous avez choisi le camp des Humains","Objectif : Démasquer et dénoncer les robots dans la population\nSi vous démasquez l'un d'eux vous avez le choix entre le dénoncer ou ne rien faire.")
+    .setFooter("Dans tous les cas l'accord du robot pour son sort est primordial. À vous d'imaginer un scénario qui vous convient...")
         message.author.sendMessage(humain_embed);
     }
     }
@@ -80,7 +80,7 @@ const humain_embed = new Discord.RichEmbed()
     .setColor("#FF0000")
     .setAuthor(msgauthor, message.author.avatarURL)
     .setTimestamp()
-    .addField("Vous avez choisi le camp des Robots","Objectif : Ne pas vous faire repérer par un humain. Si l'un d'eux vous démasque et vous dénonce vous serez tué...")
+    .addField("Vous avez choisi le camp des Robots","Objectif : Ne pas vous faire repérer par un humain.\nSi l'un d'eux vous démasque et vous dénonce vous serez tué...")
     .setFooter("Si un humain vous denonce, vous mourez et vous devez recommencer le RP. Vous pouvez bien entendu vous arranger avec l'humain afin qu'il ne vous dénonce pas ou encore imaginer une évasion avant d'être tué, à vous d'imaginer un scénario qui vous convient...")
         message.author.sendMessage(robot_embed);    
             }
