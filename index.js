@@ -139,7 +139,7 @@ bot.on('message', message => {
 if (message.member.roles.has(logé.id)) {
     message.reply("Vous possédez déjà une chambre...")
     } else {
-        message.reply("Une chambre vous a été donnée")
+        message.reply("Une chambre vous a été assignée !")
         message.member.addRole(logé);
     server.createChannel(`chambre-de-${msgauthor}`, "text",[{
         type: 'role',
