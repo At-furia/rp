@@ -54,6 +54,7 @@ var msgauthor = message.author.username;
     let guild = message.member.guild;
     let Humain = guild.roles.find(role => role.id === "538868210984943666");
     let Robot = guild.roles.find(role => role.id === "538868260989435924");
+    let oclr = guild.roles.find(role => role.id === "540278937356337153");
 
     if (message.content.startsWith(prefix + "humain")) {
         message.delete()
@@ -85,6 +86,15 @@ const humain_embed = new Discord.RichEmbed()
         message.author.sendMessage(robot_embed);    
             }
     }
+    
+    if (message.content.startsWith(prefix + "oclr001")) {
+        message.delete()
+    if (message.member.roles.has(oclr.id)) {
+    } else {
+        message.member.addRole(oclr);
+    }
+    }
+    
     })
 
 
