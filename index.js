@@ -173,3 +173,22 @@ if (message.member.roles.has(logé.id)) {
         }
     }
 })
+
+
+bot.on('message', message => {
+    if (message.channel.type === 'dm') return;
+    if (message.author.bot) return;
+    var msgauthor = message.author.username;
+    let guild = message.member.guild;
+    
+     if(message.content.startsWith(prefix +'chambre')){
+
+    const robot_embed = new Discord.RichEmbed()
+    .setColor("#FF0000")
+    .setAuthor(msgauthor, message.author.avatarURL)
+    .setTimestamp()
+    .addField("Manuel de survie","Passez le temps avec les autres pour ne pas vous ennuyer dans la salle principale\nDormez dans vos couchettes pour ne pas vous fatiguer..et faire vos petites affaires..\nManger et boire régulièrement dans la Cuisine\nSe laver dans les Douches\nMettre OBLIGATOIREMENT sa combinaison pour sortir dans l'Espace\nVous pouvez faire pousser toutes sortes de choses dans le Jardin Artificiel pour vous nourrir\nAllez à la salle de commandement pour diriger le vaisseau\Vérifiez régulièrement la salle des machines afin de vérifier que tout marche correctement")
+        message.author.sendMessage(robot_embed);    
+            }
+    
+})
