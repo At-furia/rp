@@ -187,7 +187,7 @@ bot.on('message', message => {
     .setColor("#FF0000")
     .setAuthor(msgauthor, message.author.avatarURL)
     .setTimestamp()
-    .addField("Manuel de survie","🎲 Passez le temps avec les autres pour ne pas vous ennuyer dans la salle commune\n🛏️ Dormez dans vos couchettes pour ne pas vous fatiguer..et faire vos petites affaires..\n🍽️ Manger et boire régulièrement dans la Cuisine\n🚿 Se laver dans les Douches\n👨‍🚀 Mettre OBLIGATOIREMENT sa combinaison pour sortir dans l'Espace\n🌽 Vous pouvez faire pousser toutes sortes de choses dans le Jardin Artificiel pour vous nourrir\n⌨️ Allez à la salle de commandement pour diriger le vaisseau\n🔧 Vérifiez régulièrement la salle des machines afin de vérifier que tout marche correctement")
+    .addField("Manuel de survie","🎲 Passez le temps avec les autres pour ne pas vous ennuyer dans la salle commune\n🛏️ Dormez dans vos couchettes pour ne pas vous fatiguer..et faire vos petites affaires..\n🍽️ Mangez et buvez régulièrement dans la Cuisine\n🚿 Se laver dans les Douches\n🌌 Mettre OBLIGATOIREMENT sa combinaison pour sortir dans l'Espace\n🌽 Vous pouvez faire pousser toutes sortes de choses dans le Jardin Artificiel pour vous nourrir\n⌨️ Allez à la salle de commandement pour diriger le vaisseau\n🔧 Vérifiez régulièrement la salle des machines afin de vérifier que tout marche correctement")
         message.author.sendMessage(robot_embed);    
             }
     
