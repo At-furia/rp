@@ -191,4 +191,37 @@ bot.on('message', message => {
         message.author.sendMessage(robot_embed);    
             }
     
+     if(message.content.startsWith(prefix +'couchette')){
+    let server = message.member.guild;
+         let guild = message.member.guild;
+
+    var msgauthor = message.member.nickname;
+    let logé = guild.roles.find(role => role.id === "539213131516477452");
+     
+if (message.member.roles.has(logé.id)) {
+    message.reply("Vous possédez déjà une couchette...")
+    } else {
+        message.reply("Une couchette vous a été assignée !")
+        message.member.addRole(logé);
+    server.createChannel(`couchette-de-${msgauthor}`, "text",[{
+        type: 'role',
+        id:'539209033823944725',
+        deny:0x400
+       },{
+        type: 'role',
+        id:'538868210984943666',
+        allow:0x400
+       },{
+        type: 'role',
+        id:'538868260989435924',
+        allow:0x400
+       }])
+        .then(channel => {
+     let category = server.channels.find(c => c.name == "Couchettes" && c.type == "category");
+
+    if (!category) throw new Error("erreur");
+    channel.setParent(category.id);
+  }).catch(console.error);
+        }
+    }
 })
