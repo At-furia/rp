@@ -181,7 +181,7 @@ bot.on('message', message => {
     var msgauthor = message.author.username;
     let guild = message.member.guild;
     
-     if(message.content.startsWith(prefix +'chambre')){
+     if(message.content.startsWith(prefix +'manuel')){
 
     const robot_embed = new Discord.RichEmbed()
     .setColor("#FF0000")
