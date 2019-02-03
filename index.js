@@ -255,7 +255,7 @@ bot.on('message', message => {
 
     if (message.author.bot) return;
     if (message.channel.type === 'dm') return;
-    let hlh = message.guild.channels.find(channels => channels.name === "casino");
+    let hlh = message.guild.channels.find(channels => channels.name === "🎰-casino");
     if (message.channel === hlh) {
         if (message.content == prefix + "tirer") {
             lololwin = Math.ceil(Math.random() * 100);
