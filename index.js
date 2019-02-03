@@ -239,4 +239,88 @@ if (message.member.roles.has(logé.id)) {
   }).catch(console.error);
         }
     }
+    
+//    var equipements = ['','frigo','micro-onde','douche','']
+  //  equipementsrandom = Math.ceil(Math.random() * 26);
+   // var equipementsaleatoire = equipements[equipementsrandom];
+    
+
+})
+
+
+
+bot.on('message', message => {
+
+    var msgauthor = message.author.id
+
+    if (message.author.bot) return;
+    if (message.channel.type === 'dm') return;
+    let hlh = message.guild.channels.find(channels => channels.name === "casino");
+    if (message.channel === hlh) {
+        if (message.content == prefix + "tirer") {
+            lololwin = Math.ceil(Math.random() * 100);
+            lololwine = Math.ceil(Math.random() * 100);
+
+            var alphabet = ['', '💰', '💸', '💲', '🍒', '7️⃣', '🌟', '🍉', '🍆', '💎', '⚜️', '🌻']
+            var alphabetfake = ['', '🍉', '🍆', '⚜️', '🌻']
+            randomf = Math.ceil(Math.random() * 4);
+            var lettre_aleatoiref = alphabetfake[randomf];
+            random = Math.ceil(Math.random() * 11);
+            random1 = Math.ceil(Math.random() * 11);
+            random2 = Math.ceil(Math.random() * 11);
+            random4 = Math.ceil(Math.random() * 11);
+            random6 = Math.ceil(Math.random() * 11);
+            random7 = Math.ceil(Math.random() * 11);
+            random8 = Math.ceil(Math.random() * 11);
+            random3 = Math.ceil(Math.random() * 11);
+            var lettre_aleatoire3 = alphabet[random3];
+            var lettre_aleatoire = alphabet[random];
+            var lettre_aleatoire1 = alphabet[random1];
+            var lettre_aleatoire2 = alphabet[random2];
+            var lettre_aleatoire4 = alphabet[random4];
+            var lettre_aleatoire6 = alphabet[random6];
+            var lettre_aleatoire7 = alphabet[random7];
+            var lettre_aleatoire8 = alphabet[random8];
+
+            if (lololwin >= 36) {
+                console.log(lololwin)
+                message.channel.send(`:slot_machine: **Vous activez le levier de la machine**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n${lettre_aleatoiref} ${lettre_aleatoire4} ${lettre_aleatoire3}:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nMalheureusement la chance n'est pas au rendez-vous, vous ne gagnez rien cette fois-ci..`)
+            }
+            if (lololwin <= 5) {
+                console.log(lololwin)
+                message.channel.send(`:slot_machine: **Vous activez le levier de la machine**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n7️⃣7️⃣7️⃣:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nJACKPOT !! Vous gagnez des millions de dollars !`)
+            }
+            if (lololwin >= 6 && lololwin <= 15) {
+                console.log(lololwin)
+                message.channel.send(`:slot_machine: **Vous activez le levier de la machine**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n💎💎💎:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nLes gens vous regardent d'un air bizarre comme si vous veniez de gagner un lot très rare, la chance est de votre côté !`)
+                let guild = message.member.guild;
+                let halo = guild.roles.find(role => role.name === "⚜️ Chanceux ⚜️");
+                message.member.addRole(halo);
+
+                if (message.member.roles.some(r => ["⚜️ Chanceux ⚜️"].includes(r.name))) {
+                    let guild = message.member.guild;
+                    let halo = guild.roles.find(role => role.name === "💸 Give me more money 💸");
+                    message.member.addRole(halo);
+                }
+            }
+            if (lololwin >= 16 && lololwin <= 25) {
+                console.log(lololwin)
+                message.channel.send(`:slot_machine: **Vous activez le levier de la machine**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🍒🍒🍒:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nVous venez de gagner quelques dollars !`)
+
+
+            }
+            if (lololwin >= 26 && lololwin <= 30) {
+                console.log(lololwin)
+                message.channel.send(`:slot_machine: **Vous activez le levier de la machine**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n💰💰💰:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nVous venez de gagner plus de 20.000 dollars !`)
+
+
+            }
+            if (lololwin >= 31 && lololwin <= 35) {
+                console.log(lololwin)
+
+
+                message.channel.send(`:slot_machine: **Vous activez le levier de la machine**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n💲💲💲:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nVous gagez mais malheureusement, sur un un moment d'inattention, quelqu'un vous vole votre argent..`)
+            }
+        }
+    }
 })
