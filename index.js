@@ -224,11 +224,7 @@ if (message.member.roles.has(logé.id)) {
         deny:0x400
        },{
         type: 'role',
-        id:'538868210984943666',
-        allow:0x400
-       },{
-        type: 'role',
-        id:'538868260989435924',
+        id:'541413753254838293',
         allow:0x400
        }])
         .then(channel => {
