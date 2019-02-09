@@ -245,6 +245,50 @@ if (message.member.roles.has(logé.id)) {
    // var equipementsaleatoire = equipements[equipementsrandom];
     
 
+    
+    let sald = message.guild.channels.find(channels => channels.name ===  "salon-de-l-esprit");
+    if (message.channel === sald) { 
+                        
+    if(message.content.startsWith(prefix +'bvn')){
+    bot.channels.get("541219020762775562").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'reg')){
+    bot.channels.get("541221925418958848").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'his')){
+    bot.channels.get("541222525250568215").send(message.content.slice(4, message.content.length));
+        }
+    if(message.content.startsWith(prefix +'fic')){
+    bot.channels.get("541225309995794453").send(message.content.slice(4, message.content.length));
+        }  
+    if(message.content.startsWith(prefix +'sco')){
+    bot.channels.get("541029578811113485").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'sdc')){
+    bot.channels.get("541029655466213378").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'cui')){
+    bot.channels.get("541283049451683862").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'jar')){
+    bot.channels.get("541029689913901080").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'dou')){
+    bot.channels.get("541029707521589264").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'sds')){
+    bot.channels.get("542430382130200579").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'sdm')){
+    bot.channels.get("541029812219674625").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'esp')){
+    bot.channels.get("541029733836652557").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'cou')){
+    bot.channels.get("541031829097152527").send(message.content.slice(4, message.content.length));
+        } 
+    }
 })
 
 
