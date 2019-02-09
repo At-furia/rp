@@ -211,7 +211,7 @@ bot.on('message', message => {
          let guild = message.member.guild;
 
     var msgauthor = message.member.nickname;
-    let logé = guild.roles.find(role => role.id === "539213131516477452");
+    let logé = guild.roles.find(role => role.id === "543920391928807434");
      
 if (message.member.roles.has(logé.id)) {
     message.reply("Vous possédez déjà une couchette...")
