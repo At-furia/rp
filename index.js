@@ -196,6 +196,25 @@ bot.on('message', message => {
     var msgauthor = message.author.username;
     let guild = message.member.guild;
     
+
+    let membre = guild.roles.find(role => role.id === "541413753254838293");
+    let citoyen = guild.roles.find(role => role.id === "539209033823944725");
+    let Humain = guild.roles.find(role => role.id === "538868210984943666");
+    let Robot = guild.roles.find(role => role.id === "538868260989435924");
+    
+    if (message.content.startsWith(prefix + "monter")) {
+        message.delete()
+    if (message.member.roles.has(membre.id)) {
+    } else {
+        message.member.addRole(membre);
+        message.member.removeRole(citoyen)
+        message.member.removeRole(Humain)
+        message.member.removeRole(Robot)
+       
+    }
+    }
+    
+    
      if(message.content.startsWith(prefix +'manuel')){
 
     const robot_embed = new Discord.RichEmbed()
