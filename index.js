@@ -6,6 +6,7 @@ const fs = require("fs");
 const adapter = new FileSync('database.json');
 const db = low(adapter);
 
+db.defaults({objet: []}).write()
 
 var prefix = "!"
 var bot = new Discord.Client();
