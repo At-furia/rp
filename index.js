@@ -304,8 +304,8 @@ if (message.member.roles.has(logé.id)) {
     var objetsdb = db.get("objet").find('etat').value()
     var etatobjet = Object.values(objetsdb);
 
-    let sald = message.guild.channels.find(channels => channels.name ===  "salon-de-l-esprit");
-    if (message.channel === sald) { 
+    let salde = message.guild.channels.find(channels => channels.name ===  "salon-de-l-esprit");
+    if (message.channel === salde) { 
     if (message.content === prefix + "obj") {
         var objectsca = ['', 'Un réacteur', 'Un micro-onde', 'Une douche']
         randomf = Math.ceil(Math.random() * 3);
