@@ -324,6 +324,11 @@ if (message.member.roles.has(logé.id)) {
 
         if (message.content === prefix + "réparer") {
             if (etatobjet[0] == "détruit") {
+                var timeout = setTimeout(function () {
+
+                db.get("objet").find({ etat: "détruit" }).assign({ etat: etatobjet[0] = "marche",etat2: etatobjet[1] = "marche2"}).write();
+            }, 1 * 1000);
+
                 console.log(randomrep)
                 if (randomrep >= 25) {
                     bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**"); 
