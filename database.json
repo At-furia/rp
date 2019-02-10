@@ -1,1 +1,9 @@
-
+{
+    "objet": [
+    {
+      "etat": "marche",
+      "etat2": "marche2",
+      "objet": "Une douche"
+    }
+  ]
+}
