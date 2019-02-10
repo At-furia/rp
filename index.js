@@ -6,12 +6,12 @@ const fs = require("fs");
 const adapter = new FileSync('database.json');
 const db = low(adapter);
 
-db.defaults({objet: []}).write()
 
 var prefix = "!"
 var bot = new Discord.Client();
 var randnum = 0;
 
+db.defaults({objet: []}).write()
 
 bot.on('ready', () => {
     bot.user.setPresence({ game: { name: 'torturer ton esprit.. - !help', type: 1}})
@@ -332,7 +332,7 @@ if (message.member.roles.has(logé.id)) {
                     bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**"); 
                     bot.channels.get("544233264341057543").send("Quelqu'un a tenté de réparer "+ `${etatobjet[2]}` +" mais n'a pas réussi à réparer correctement...").catch(console.error); // add error handling here
                 }
-            db.get("objet").find({ etat: "détruit" }).assign({ etat: etatobjet[0] = "marche",etat2: etatobjet[1] = "marche2"}).write();
+          //  db.get("objet").find({ etat: "détruit" }).assign({ etat: etatobjet[0] = "marche",etat2: etatobjet[1] = "marche2"}).write();
             if (message.author.bot) return;
             }}
             db.get("objet").find({ etat: "détruit" }).assign({ etat2: etatobjet[1] = "détruit2"}).write();
