@@ -305,8 +305,8 @@ if (message.member.roles.has(logé.id)) {
     var objetsdb = db.get("objet").find('etat').value()
     var etatobjet = Object.values(objetsdb);
 
-    let salde = message.guild.channels.find(channels => channels.name ===  "salon-de-l-esprit");
-    if (message.channel === salde) { 
+    //let salde = message.guild.channels.find(channels => channels.name ===  "salon-de-l-esprit");
+  //  if (message.channel === salde) { 
     if (message.content === prefix + "obj") {
         var objectsca = ['', 'Un réacteur', 'Un micro-onde', 'Une douche']
         randomf = Math.ceil(Math.random() * 3);
@@ -316,7 +316,8 @@ if (message.member.roles.has(logé.id)) {
             bot.channels.get("544233264341057543").send( `${lettre_aleatoiref}` + " a été endommagé(e) !")
         db.get("objet").find({ etat: "marche" }).assign({ etat: etatobjet[0] = "détruit", objet: etatobjet[2] = `${lettre_aleatoiref}`}).write();
 
-    }}}
+    }}
+//}
 
 
         randomrep = Math.ceil(Math.random() * 100);
