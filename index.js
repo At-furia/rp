@@ -254,12 +254,7 @@ if (message.member.roles.has(logé.id)) {
   }).catch(console.error);
         }
     }
-    
-//    var equipements = ['','frigo','micro-onde','douche','']
-  //  equipementsrandom = Math.ceil(Math.random() * 26);
-   // var equipementsaleatoire = equipements[equipementsrandom];
-    
-
+   
     
     let sald = message.guild.channels.find(channels => channels.name ===  "salon-de-l-esprit");
     if (message.channel === sald) { 
@@ -304,6 +299,53 @@ if (message.member.roles.has(logé.id)) {
     bot.channels.get("541031829097152527").send(message.content.slice(4, message.content.length));
         } 
     }
+    
+    
+    var objetsdb = db.get("objet").find('etat').value()
+    var etatobjet = Object.values(objetsdb);
+
+    let sald = message.guild.channels.find(channels => channels.name ===  "salon-de-l-esprit");
+    if (message.channel === sald) { 
+    if (message.content === prefix + "obj") {
+        var objectsca = ['', 'Un réacteur', 'Un micro-onde', 'Une douche']
+        randomf = Math.ceil(Math.random() * 3);
+        var lettre_aleatoiref = objectsca[randomf];
+        if (etatobjet[0] == "marche") {
+            bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**"); 
+            bot.channels.get("544233264341057543").send( `${lettre_aleatoiref}` + " a été endommagé(e) !")
+        db.get("objet").find({ etat: "marche" }).assign({ etat: etatobjet[0] = "détruit", objet: etatobjet[2] = `${lettre_aleatoiref}`}).write();
+
+    }}}
+
+
+        randomrep = Math.ceil(Math.random() * 100);
+        var timeout = setTimeout(function () {
+
+        if (message.content === prefix + "réparer") {
+            if (etatobjet[0] == "détruit") {
+                console.log(randomrep)
+                if (randomrep >= 25) {
+                    bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**"); 
+                    bot.channels.get("544233264341057543").send(`${etatobjet[2]}` + " a été réparé(e) !").catch(console.error); // add error handling here
+                } else {
+                    bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**"); 
+                    bot.channels.get("544233264341057543").send("Quelqu'un a tenté de réparer "+ `${etatobjet[2]}` +" mais n'a pas réussi à réparer correctement...").catch(console.error); // add error handling here
+                }
+            db.get("objet").find({ etat: "détruit" }).assign({ etat: etatobjet[0] = "marche",etat2: etatobjet[1] = "marche2"}).write();
+            if (message.author.bot) return;
+            }}
+            db.get("objet").find({ etat: "détruit" }).assign({ etat2: etatobjet[1] = "détruit2"}).write();
+            
+
+        }, 1 * 60000);
+
+        if (etatobjet[0] == "détruit" && etatobjet[1] == "détruit2") {
+
+            db.get("objet").find({ etat: "détruit" }).assign({ etat: etatobjet[0] = "marche",etat2: etatobjet[1] = "marche2" }).write();
+            bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**"); 
+            bot.channels.get("544233264341057543").send(`${etatobjet[2]}` + " n'a pas été réparé(e) à temps..").catch(console.error); // add error handling here
+        if (message.author.bot) return;
+}
 })
 
 
