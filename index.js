@@ -11,7 +11,7 @@ var prefix = "!"
 var bot = new Discord.Client();
 var randnum = 0;
 
-db.defaults({objet: []}).write()
+db.defaults({objet: [],asteroide: []}).write()
 
 bot.on('ready', () => {
     bot.user.setPresence({ game: { name: 'torturer ton esprit.. - !help', type: 1}})
