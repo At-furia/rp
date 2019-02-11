@@ -353,7 +353,7 @@ if (message.member.roles.has(logé.id)) {
         var timeout = setTimeout(function () {
 
         db.get("objet").find({ etat: "détruit" }).assign({ etat2: etatobjet[1] = "détruit2"}).write();
-    }, 1 * 59500);
+    }, 1 * 59900);
         }
     
         if (etatobjet[0] == "détruit" && etatobjet[1] == "détruit2") {
@@ -406,7 +406,7 @@ if (message.author.bot) return;
         var timeout = setTimeout(function () {
 
         db.get("asteroide").find({ bouger: "bouge" }).assign({ bouger2: direction[3] = "bouge2"}).write();
-    }, 1 * 59500);
+    }, 1 * 59900);
         }
 
         if (direction[0] == "bouge" && direction[3] == "bouge2") {
