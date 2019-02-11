@@ -323,7 +323,7 @@ if (message.member.roles.has(logé.id)) {
         randomrep = Math.ceil(Math.random() * 100);
         var timeout = setTimeout(function () {
 
-        if (message.content === prefix + "réparer") {
+     if(message.content.startsWith(prefix +'réparer')){
             if (etatobjet[0] == "détruit") {
                 db.get("objet").find({ etat: "détruit" }).assign({ etat: etatobjet[0] = "marche",etat2: etatobjet[1] = "marche2"}).write();
 
@@ -363,6 +363,56 @@ if (message.member.roles.has(logé.id)) {
             bot.channels.get("544233264341057543").send(`${etatobjet[2]}` + " n'a pas été réparé(e) à temps..").catch(console.error); // add error handling here
             bot.channels.get("544233264341057543").send("**Bouclier : -10 points**"); 
 if (message.author.bot) return;
+}
+    
+    
+    
+    
+    var directiondb = db.get("asteroide").find('bouger').value()
+    var direction = Object.values(directiondb);
+
+    if (message.content === prefix + "ast") {
+        number_random = Math.floor(Math.random() * (4950 - 0) + 50)
+
+        console.log(number_random)
+
+        if (direction[0] == "ok") {
+            bot.channels.get("415642667670700032").send("**Mise à jour du vaisseau :**"); 
+            bot.channels.get("415642667670700032").send(" Un astéroïde est à " + `${number_random}` + " kilomètres du vaisseau !")
+            db.get("asteroide").find({ bouger: "ok" }).assign({ bouger: direction[0] = "bouge", distance: direction[2] = `${number_random}`}).write();
+    }}
+
+
+        var timeout = setTimeout(function () {
+
+            if(message.content.startsWith(prefix +'diriger')){
+                let salde = message.guild.channels.find(channels => channels.name ===  "⌨-salle-de-commandement");
+          if (message.channel === salde) {
+                if (direction[0] == "bouge") {
+                db.get("asteroide").find({ bouger: "ok" }).assign({ bouger: direction[0] = "ok", bouger2: direction[3] = "ok2"}).write();
+                
+            bot.channels.get("415642667670700032").send("**Mise à jour du vaisseau :**"); 
+            bot.channels.get("415642667670700032").send("L'astéroïde a été esquivé !").catch(console.error); // add error handling here
+            bot.channels.get("415642667670700032").send("**Bouclier : +5 points**"); 
+
+            }} 
+        }
+        }, 1 * 60000);
+    
+        if (direction[0] == "bouge") {
+
+        var timeout = setTimeout(function () {
+
+        db.get("asteroide").find({ bouger: "bouge" }).assign({ bouger2: direction[3] = "bouger2"}).write();
+    }, 1 * 59500);
+        }
+
+        if (direction[0] == "bouger" && direction[3] == "bouger2") {
+
+            db.get("asteroide").find({ bouger: "bouge" }).assign({ bouger: direction[0] = "ok",bouger2: direction[3] = "ok2"}).write();
+            bot.channels.get("415642667670700032").send("**Mise à jour du vaisseau :**"); 
+            bot.channels.get("415642667670700032").send("L'astéroïde n'a pas été esquivé à temps.. Le vaisseau a foncé dessus et a été endommagé..").catch(console.error); // add error handling here        
+            bot.channels.get("415642667670700032").send("**Bouclier : -15 points**"); 
 }
 })
 
