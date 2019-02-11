@@ -407,7 +407,7 @@ if (message.author.bot) return;
     }, 1 * 59500);
         }
 
-        if (direction[0] == "bouger" && direction[3] == "bouger2") {
+        if (direction[0] == "bouge" && direction[3] == "bouge2") {
 
             db.get("asteroide").find({ bouger: "bouge" }).assign({ bouger: direction[0] = "ok",bouger2: direction[3] = "ok2"}).write();
             bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**"); 
