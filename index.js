@@ -377,8 +377,8 @@ if (message.author.bot) return;
         console.log(number_random)
 
         if (direction[0] == "ok") {
-            bot.channels.get("415642667670700032").send("**Mise à jour du vaisseau :**"); 
-            bot.channels.get("415642667670700032").send(" Un astéroïde est à " + `${number_random}` + " kilomètres du vaisseau !")
+            bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**"); 
+            bot.channels.get("544233264341057543").send(" Un astéroïde est à " + `${number_random}` + " kilomètres du vaisseau !")
             db.get("asteroide").find({ bouger: "ok" }).assign({ bouger: direction[0] = "bouge", distance: direction[2] = `${number_random}`}).write();
     }}
 
@@ -391,9 +391,9 @@ if (message.author.bot) return;
                 if (direction[0] == "bouge") {
                 db.get("asteroide").find({ bouger: "ok" }).assign({ bouger: direction[0] = "ok", bouger2: direction[3] = "ok2"}).write();
                 
-            bot.channels.get("415642667670700032").send("**Mise à jour du vaisseau :**"); 
-            bot.channels.get("415642667670700032").send("L'astéroïde a été esquivé !").catch(console.error); // add error handling here
-            bot.channels.get("415642667670700032").send("**Bouclier : +5 points**"); 
+            bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**"); 
+            bot.channels.get("544233264341057543").send("L'astéroïde a été esquivé !").catch(console.error); // add error handling here
+            bot.channels.get("544233264341057543").send("**Bouclier : +5 points**"); 
 
             }} 
         }
@@ -410,9 +410,9 @@ if (message.author.bot) return;
         if (direction[0] == "bouger" && direction[3] == "bouger2") {
 
             db.get("asteroide").find({ bouger: "bouge" }).assign({ bouger: direction[0] = "ok",bouger2: direction[3] = "ok2"}).write();
-            bot.channels.get("415642667670700032").send("**Mise à jour du vaisseau :**"); 
-            bot.channels.get("415642667670700032").send("L'astéroïde n'a pas été esquivé à temps.. Le vaisseau a foncé dessus et a été endommagé..").catch(console.error); // add error handling here        
-            bot.channels.get("415642667670700032").send("**Bouclier : -15 points**"); 
+            bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**"); 
+            bot.channels.get("544233264341057543").send("L'astéroïde n'a pas été esquivé à temps.. Le vaisseau a foncé dessus et a été endommagé..").catch(console.error); // add error handling here        
+            bot.channels.get("544233264341057543").send("**Bouclier : -15 points**"); 
 }
 })
 
