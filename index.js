@@ -396,7 +396,7 @@ if (message.author.bot) return;
             bot.channels.get("544233264341057543").send("**Bouclier : +5 points**"); 
 
             }} 
-        }
+        } else {}
         }, 1 * 60000);
     
         if (direction[0] == "bouge") {
