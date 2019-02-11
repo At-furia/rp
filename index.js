@@ -335,10 +335,13 @@ if (message.member.roles.has(logé.id)) {
                 if (randomrep >= 25) {
                     bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**"); 
                     bot.channels.get("544233264341057543").send(`${etatobjet[2]}` + " a été réparé(e) !").catch(console.error); // add error handling here
+                    bot.channels.get("544233264341057543").send("**Bouclier : +10 points**"); 
+
                 } else {
                     bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**"); 
                     bot.channels.get("544233264341057543").send("Quelqu'un a tenté de réparer "+ `${etatobjet[2]}` +" mais n'a pas réussi à réparer correctement...").catch(console.error); // add error handling here
-                }
+                    bot.channels.get("544233264341057543").send("**Bouclier : -5 points**"); 
+ }
           //  db.get("objet").find({ etat: "détruit" }).assign({ etat: etatobjet[0] = "marche",etat2: etatobjet[1] = "marche2"}).write();
             if (message.author.bot) return;
             }}
@@ -358,7 +361,8 @@ if (message.member.roles.has(logé.id)) {
             db.get("objet").find({ etat: "détruit" }).assign({ etat: etatobjet[0] = "marche",etat2: etatobjet[1] = "marche2" }).write();
             bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**"); 
             bot.channels.get("544233264341057543").send(`${etatobjet[2]}` + " n'a pas été réparé(e) à temps..").catch(console.error); // add error handling here
-        if (message.author.bot) return;
+            bot.channels.get("544233264341057543").send("**Bouclier : -10 points**"); 
+if (message.author.bot) return;
 }
 })
 
