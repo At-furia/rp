@@ -396,6 +396,8 @@ if (message.author.bot) return;
             bot.channels.get("544233264341057543").send("**Bouclier : +5 points**"); 
 
             }} 
+            db.get("asteroide").find({ bouger: "bouge" }).assign({ bouger: direction[0] = "bouge",bouger: direction[3] = "bouge2"}).write();  ///////////////
+
         } else {}
         }, 1 * 60000);
     
@@ -403,7 +405,7 @@ if (message.author.bot) return;
 
         var timeout = setTimeout(function () {
 
-        db.get("asteroide").find({ bouger: "bouge" }).assign({ bouger2: direction[3] = "bouger2"}).write();
+        db.get("asteroide").find({ bouger: "bouge" }).assign({ bouger2: direction[3] = "bouge2"}).write();
     }, 1 * 59500);
         }
 
