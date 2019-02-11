@@ -389,7 +389,7 @@ if (message.author.bot) return;
                 let salde = message.guild.channels.find(channels => channels.name ===  "⌨-salle-de-commandement");
           if (message.channel === salde) {
                 if (direction[0] == "bouge") {
-                db.get("asteroide").find({ bouger: "ok" }).assign({ bouger: direction[0] = "ok", bouger2: direction[3] = "ok2"}).write();
+                db.get("asteroide").find({ bouger: "bouge" }).assign({ bouger: direction[0] = "ok", bouger2: direction[3] = "ok2"}).write();
                 
             bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**"); 
             bot.channels.get("544233264341057543").send("L'astéroïde a été esquivé !").catch(console.error); // add error handling here
