@@ -308,8 +308,8 @@ if (message.member.roles.has(logé.id)) {
     //let salde = message.guild.channels.find(channels => channels.name ===  "salon-de-l-esprit");
   //  if (message.channel === salde) { 
     if (message.content === prefix + "obj") {
-        var objectsca = ['', 'Un réacteur', 'Un micro-onde', 'Une douche']
-        randomf = Math.ceil(Math.random() * 3);
+        var objectsca = ['', 'Un réacteur', 'Un micro-onde', 'Une douche','La ventilation','Le four','Le chauffage']
+        randomf = Math.ceil(Math.random() * 6);
         var lettre_aleatoiref = objectsca[randomf];
         if (etatobjet[0] == "marche") {
             bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**"); 
@@ -325,9 +325,10 @@ if (message.member.roles.has(logé.id)) {
 
         if (message.content === prefix + "réparer") {
             if (etatobjet[0] == "détruit") {
+                db.get("objet").find({ etat: "détruit" }).assign({ etat: etatobjet[0] = "marche",etat2: etatobjet[1] = "marche2"}).write();
+
                 var timeout = setTimeout(function () {
 
-                db.get("objet").find({ etat: "détruit" }).assign({ etat: etatobjet[0] = "marche",etat2: etatobjet[1] = "marche2"}).write();
             }, 1 * 1000);
 
                 console.log(randomrep)
@@ -341,11 +342,17 @@ if (message.member.roles.has(logé.id)) {
           //  db.get("objet").find({ etat: "détruit" }).assign({ etat: etatobjet[0] = "marche",etat2: etatobjet[1] = "marche2"}).write();
             if (message.author.bot) return;
             }}
-            db.get("objet").find({ etat: "détruit" }).assign({ etat2: etatobjet[1] = "détruit2"}).write();
-            
-
+           // db.get("objet").find({ etat: "détruit" }).assign({ etat2: etatobjet[1] = "détruit2"}).write();
         }, 1 * 60000);
 
+    if (etatobjet[0] == "détruit") {
+
+        var timeout = setTimeout(function () {
+
+        db.get("objet").find({ etat: "détruit" }).assign({ etat2: etatobjet[1] = "détruit2"}).write();
+    }, 1 * 59500);
+        }
+    
         if (etatobjet[0] == "détruit" && etatobjet[1] == "détruit2") {
 
             db.get("objet").find({ etat: "détruit" }).assign({ etat: etatobjet[0] = "marche",etat2: etatobjet[1] = "marche2" }).write();
