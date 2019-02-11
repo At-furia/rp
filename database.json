@@ -5,5 +5,13 @@
       "etat2": "marche2",
       "objet": "Une douche"
     }
+  ],
+  "asteroide": [
+    {
+      "bouger": "ok",
+      "jcp": "jjj",
+      "distance": "1888",
+      "bouger2": "ok2"
+    }
   ]
 }
