@@ -382,10 +382,9 @@ if (message.author.bot) return;
             db.get("asteroide").find({ bouger: "ok" }).assign({ bouger: direction[0] = "bouge", distance: direction[2] = `${number_random}`}).write();
     }}
 
-
-        var timeout = setTimeout(function () {
-    let salde = message.guild.channels.find(channels => channels.name ===  "⌨-salle-de-commandement");
+   let salde = message.guild.channels.find(channels => channels.name ===  "⌨-salle-de-commandement");
          if (message.channel === salde) {
+        var timeout = setTimeout(function () {
             if(message.content.startsWith(prefix +'diriger')){
              //   let salde = message.guild.channels.find(channels => channels.name ===  "⌨-salle-de-commandement");
          // if (message.channel === salde) {
