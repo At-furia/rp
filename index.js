@@ -272,6 +272,9 @@ if (message.member.roles.has(logé.id)) {
     if(message.content.startsWith(prefix +'fic')){
     bot.channels.get("541225309995794453").send(message.content.slice(4, message.content.length));
         }  
+    if(message.content.startsWith(prefix +'ann')){
+    bot.channels.get("544233264341057543").send(message.content.slice(4, message.content.length));
+        } 
     if(message.content.startsWith(prefix +'sco')){
     bot.channels.get("541029578811113485").send(message.content.slice(4, message.content.length));
         } 
@@ -283,6 +286,9 @@ if (message.member.roles.has(logé.id)) {
         } 
     if(message.content.startsWith(prefix +'jar')){
     bot.channels.get("541029689913901080").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'sdp')){
+    bot.channels.get("544901130950279198").send(message.content.slice(4, message.content.length));
         } 
     if(message.content.startsWith(prefix +'dou')){
     bot.channels.get("541029707521589264").send(message.content.slice(4, message.content.length));
@@ -301,7 +307,7 @@ if (message.member.roles.has(logé.id)) {
         } 
     }
     
-    
+    544901130950279198
     var objetsdb = db.get("objet").find('etat').value()
     var etatobjet = Object.values(objetsdb);
 
