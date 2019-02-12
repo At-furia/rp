@@ -352,14 +352,14 @@ if (message.member.roles.has(logé.id)) {
             if (message.author.bot) return;
             }}
             db.get("objet").find({ etat: "détruit" }).assign({ etat2: etatobjet[1] = "détruit2"}).write(); //////////////
-        }, 1 * 60000);
+        }, 1 * 1800000);
 
     if (etatobjet[0] == "détruit") {
 
         var timeout = setTimeout(function () {
 
         db.get("objet").find({ etat: "détruit" }).assign({ etat2: etatobjet[1] = "détruit2"}).write();
-    }, 1 * 59900);
+    }, 1 * 1799000);
         }
     
         if (etatobjet[0] == "détruit" && etatobjet[1] == "détruit2") {
@@ -405,14 +405,14 @@ if (message.author.bot) return;
        // } //else {
                  //   db.get("asteroide").find({ bouger: "bouge" }).assign({ bouger: direction[0] = "bouge",bouger: direction[3] = "bouge2"}).write();  ///////////////
 
-        }, 1 * 60000);
+        }, 1 * 3600000);
          
         if (direction[0] == "bouge") {
 
         var timeout = setTimeout(function () {
 
         db.get("asteroide").find({ bouger: "bouge" }).assign({ bouger2: direction[3] = "bouge2"}).write();
-    }, 1 * 59900);
+    }, 1 * 3599000);
         }
 
         if (direction[0] == "bouge" && direction[3] == "bouge2") {
