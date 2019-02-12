@@ -401,9 +401,9 @@ if (message.author.bot) return;
        // } //else {
                  //   db.get("asteroide").find({ bouger: "bouge" }).assign({ bouger: direction[0] = "bouge",bouger: direction[3] = "bouge2"}).write();  ///////////////
 
-        } ///
+        //} ///
         }, 1 * 60000);
-    
+         }///
         if (direction[0] == "bouge") {
 
         var timeout = setTimeout(function () {
