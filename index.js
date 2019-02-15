@@ -64,7 +64,7 @@ bot.on('message', message => {
     
 
     let membre = guild.roles.find(role => role.id === "541413753254838293");
-   // let citoyen = guild.roles.find(role => role.id === "539209033823944725");
+    //let citoyen = guild.roles.find(role => role.id === "539209033823944725");
    // let Humain = guild.roles.find(role => role.id === "538868210984943666");
    // let Robot = guild.roles.find(role => role.id === "538868260989435924");
     
@@ -73,7 +73,7 @@ bot.on('message', message => {
     if (message.member.roles.has(membre.id)) {
     } else {
         message.member.addRole(membre);
-       // message.member.removeRole(citoyen)
+        //message.member.removeRole(citoyen)
        // message.member.removeRole(Humain)
      //   message.member.removeRole(Robot)
        
