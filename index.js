@@ -35,7 +35,7 @@ bot.on('message', message => {
         bot.channels.get("538883311301427200").send(message.content.slice(0, message.content.length)+ " " + userVar); 
     }}
     if (message.content.startsWith(prefix + "mp")) {
-                if(!message.member.roles.some(r=>["Présidents"].includes(r.name)) ) 
+                if(!message.member.roles.some(r=>["Organisateurs"].includes(r.name)) ) 
                     return;
                 {
         if (!pUser) {
