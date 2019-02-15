@@ -14,7 +14,7 @@ var randnum = 0;
 db.defaults({objet: [],asteroide: []}).write()
 
 bot.on('ready', () => {
-    bot.user.setPresence({ game: { name: 'Protéger le vaisseau', type: 1}})
+    bot.user.setPresence({ game: { name: 'protéger le vaisseau', type: 1}})
     console.log("Bot Ready !");
     bot.user.setStatus("online")
 
