@@ -47,141 +47,6 @@ bot.on('message', message => {
     }
         })
 
-bot.on('message', message => {
-            if (message.channel.type === 'dm') return;
-if (message.author.bot) return;
-var msgauthor = message.author.username;
-    
-    let guild = message.member.guild;
-    let Humain = guild.roles.find(role => role.id === "538868210984943666");
-    let Robot = guild.roles.find(role => role.id === "538868260989435924");
-    let oclr = guild.roles.find(role => role.id === "540278937356337153");
-
-    if (message.content.startsWith(prefix + "humain")) {
-        message.delete()
-    if (message.member.roles.has(Humain.id)||message.member.roles.has(Robot.id)) {
-    } else {
-        message.member.addRole(Humain);
-const humain_embed = new Discord.RichEmbed()
-    .setColor("#FF0000")
-    .setAuthor(msgauthor, message.author.avatarURL)
-    .setTimestamp()
-    .addField("Vous avez choisi le camp des Humains","Objectif : Démasquer et dénoncer les robots dans la population\nSi vous démasquez l'un d'eux vous avez le choix entre le dénoncer ou ne rien faire.")
-    .setFooter("Dans tous les cas l'accord du robot pour son sort est primordial. À vous d'imaginer un scénario qui vous convient...")
-        message.author.sendMessage(humain_embed);
-    }
-    }
-    
-    
-        abc = Math.ceil(Math.random() * 100);
-if (message.content === prefix + "roulette") {
-
-        message.reply(`a fait tourner la roulette et obtient le numéro ${abc} !`)
-    }
-    
-    if (message.content.startsWith(prefix + "robot")) {
-        message.delete()
-    if (message.member.roles.has(Robot.id)||message.member.roles.has(Humain.id)) {
-    } else {
-        message.member.addRole(Robot);
-    
-        const robot_embed = new Discord.RichEmbed()
-    .setColor("#FF0000")
-    .setAuthor(msgauthor, message.author.avatarURL)
-    .setTimestamp()
-    .addField("Vous avez choisi le camp des Robots","Objectif : Ne pas vous faire repérer par un humain.\nSi l'un d'eux vous démasque et vous dénonce vous serez tué...")
-    .setFooter("Si un humain vous denonce, vous mourez et vous devez recommencer le RP. Vous pouvez bien entendu vous arranger avec l'humain afin qu'il ne vous dénonce pas ou encore imaginer une évasion avant d'être tué, à vous d'imaginer un scénario qui vous convient...")
-        message.author.sendMessage(robot_embed);    
-            }
-    }
-    
-    if (message.content.startsWith(prefix + "oclr001")) {
-        message.delete()
-    if (message.member.roles.has(oclr.id)) {
-    } else {
-        message.member.addRole(oclr);
-    }
-    }
-    
-    })
-
-
-bot.on('message', message => {
-
-    if (message.author.bot) return;
-    if (message.channel.type === 'dm') return;
-
-    let sald = message.guild.channels.find(channels => channels.name ===  "salon-de-l-esprit");
-    if (message.channel === sald) { 
-                        
-    if(message.content.startsWith(prefix +'lois')){
-    bot.channels.get("538870009917603841").send(message.content.slice(5, message.content.length));
-        } 
-    if(message.content.startsWith(prefix +'hist')){
-    bot.channels.get("539098415997386752").send(message.content.slice(5, message.content.length));
-        } 
-    if(message.content.startsWith(prefix +'g')){
-    bot.channels.get("538879113859956753").send(message.content.slice(2, message.content.length));
-        }
-    if(message.content.startsWith(prefix +'rue')){
-    bot.channels.get("539108946590564372").send(message.content.slice(4, message.content.length));
-        }  
-    if(message.content.startsWith(prefix +'mag')){
-    bot.channels.get("539108964399317002").send(message.content.slice(4, message.content.length));
-        } 
-    if(message.content.startsWith(prefix +'res')){
-    bot.channels.get("539108988361637899").send(message.content.slice(4, message.content.length));
-        } 
-    if(message.content.startsWith(prefix +'par')){
-    bot.channels.get("539109004195135528").send(message.content.slice(4, message.content.length));
-        } 
-    if(message.content.startsWith(prefix +'for')){
-    bot.channels.get("539109026814754831").send(message.content.slice(4, message.content.length));
-        } 
-    if(message.content.startsWith(prefix +'adu')){
-    bot.channels.get("539109125540413480").send(message.content.slice(4, message.content.length));
-        } 
-    if(message.content.startsWith(prefix +'ter')){
-    bot.channels.get("538873604167696394").send(message.content.slice(4, message.content.length));
-        } 
-    }
-    
-    
- if(message.content.startsWith(prefix +'chambre')){
-    let server = message.member.guild;
-         let guild = message.member.guild;
-
-    var msgauthor = message.member.nickname;
-    let logé = guild.roles.find(role => role.id === "539213131516477452");
-     
-if (message.member.roles.has(logé.id)) {
-    message.reply("Vous possédez déjà une chambre...")
-    } else {
-        message.reply("Une chambre vous a été assignée !")
-        message.member.addRole(logé);
-    server.createChannel(`chambre-de-${msgauthor}`, "text",[{
-        type: 'role',
-        id:'539209033823944725',
-        deny:0x400
-       },{
-        type: 'role',
-        id:'538868210984943666',
-        allow:0x400
-       },{
-        type: 'role',
-        id:'538868260989435924',
-        allow:0x400
-       }])
-        .then(channel => {
-     let category = server.channels.find(c => c.name == "Chambres" && c.type == "category");
-
-    if (!category) throw new Error("erreur");
-    channel.setParent(category.id);
-  }).catch(console.error);
-        }
-    }
-})
-
 
 
 ////////////////////////////////////////////////////////////// RP2 /////////////////////////////////////////////////////////////////
@@ -199,18 +64,18 @@ bot.on('message', message => {
     
 
     let membre = guild.roles.find(role => role.id === "541413753254838293");
-    let citoyen = guild.roles.find(role => role.id === "539209033823944725");
-    let Humain = guild.roles.find(role => role.id === "538868210984943666");
-    let Robot = guild.roles.find(role => role.id === "538868260989435924");
+   // let citoyen = guild.roles.find(role => role.id === "539209033823944725");
+   // let Humain = guild.roles.find(role => role.id === "538868210984943666");
+   // let Robot = guild.roles.find(role => role.id === "538868260989435924");
     
     if (message.content.startsWith(prefix + "monter")) {
         message.delete()
     if (message.member.roles.has(membre.id)) {
     } else {
         message.member.addRole(membre);
-        message.member.removeRole(citoyen)
-        message.member.removeRole(Humain)
-        message.member.removeRole(Robot)
+       // message.member.removeRole(citoyen)
+       // message.member.removeRole(Humain)
+     //   message.member.removeRole(Robot)
        
     }
     }
@@ -426,78 +291,4 @@ if (message.author.bot) return;
 
 
 
-bot.on('message', message => {
 
-    var msgauthor = message.author.id
-
-    if (message.author.bot) return;
-    if (message.channel.type === 'dm') return;
-    let hlh = message.guild.channels.find(channels => channels.name === "🎰-casino");
-    if (message.channel === hlh) {
-        if (message.content == prefix + "tirer") {
-            lololwin = Math.ceil(Math.random() * 100);
-            lololwine = Math.ceil(Math.random() * 100);
-
-            var alphabet = ['', '💰', '💸', '💲', '🍒', '7️⃣', '🌟', '🍉', '🍆', '💎', '⚜️', '🌻']
-            var alphabetfake = ['', '🍉', '🍆', '⚜️', '🌻']
-            randomf = Math.ceil(Math.random() * 4);
-            var lettre_aleatoiref = alphabetfake[randomf];
-            random = Math.ceil(Math.random() * 11);
-            random1 = Math.ceil(Math.random() * 11);
-            random2 = Math.ceil(Math.random() * 11);
-            random4 = Math.ceil(Math.random() * 11);
-            random6 = Math.ceil(Math.random() * 11);
-            random7 = Math.ceil(Math.random() * 11);
-            random8 = Math.ceil(Math.random() * 11);
-            random3 = Math.ceil(Math.random() * 11);
-            var lettre_aleatoire3 = alphabet[random3];
-            var lettre_aleatoire = alphabet[random];
-            var lettre_aleatoire1 = alphabet[random1];
-            var lettre_aleatoire2 = alphabet[random2];
-            var lettre_aleatoire4 = alphabet[random4];
-            var lettre_aleatoire6 = alphabet[random6];
-            var lettre_aleatoire7 = alphabet[random7];
-            var lettre_aleatoire8 = alphabet[random8];
-
-            if (lololwin >= 36) {
-                console.log(lololwin)
-                message.channel.send(`:slot_machine: **Vous activez le levier de la machine**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n${lettre_aleatoiref} ${lettre_aleatoire4} ${lettre_aleatoire3}:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nMalheureusement la chance n'est pas au rendez-vous, vous ne gagnez rien cette fois-ci..`)
-            }
-            if (lololwin <= 5) {
-                console.log(lololwin)
-                message.channel.send(`:slot_machine: **Vous activez le levier de la machine**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n7️⃣7️⃣7️⃣:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nJACKPOT !! Vous gagnez des millions de dollars !`)
-            }
-            if (lololwin >= 6 && lololwin <= 15) {
-                console.log(lololwin)
-                message.channel.send(`:slot_machine: **Vous activez le levier de la machine**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n💎💎💎:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nLes gens vous regardent d'un air bizarre comme si vous veniez de gagner un lot très rare, la chance est de votre côté !`)
-                let guild = message.member.guild;
-                let halo = guild.roles.find(role => role.name === "⚜️ Chanceux ⚜️");
-                message.member.addRole(halo);
-
-                if (message.member.roles.some(r => ["⚜️ Chanceux ⚜️"].includes(r.name))) {
-                    let guild = message.member.guild;
-                    let halo = guild.roles.find(role => role.name === "💸 Give me more money 💸");
-                    message.member.addRole(halo);
-                }
-            }
-            if (lololwin >= 16 && lololwin <= 25) {
-                console.log(lololwin)
-                message.channel.send(`:slot_machine: **Vous activez le levier de la machine**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n🍒🍒🍒:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nVous venez de gagner quelques dollars !`)
-
-
-            }
-            if (lololwin >= 26 && lololwin <= 30) {
-                console.log(lololwin)
-                message.channel.send(`:slot_machine: **Vous activez le levier de la machine**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n💰💰💰:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nVous venez de gagner plus de 20.000 dollars !`)
-
-
-            }
-            if (lololwin >= 31 && lololwin <= 35) {
-                console.log(lololwin)
-
-
-                message.channel.send(`:slot_machine: **Vous activez le levier de la machine**\n${lettre_aleatoire} ${lettre_aleatoire1} ${lettre_aleatoire2}\n💲💲💲:arrow_left:\n${lettre_aleatoire6} ${lettre_aleatoire7} ${lettre_aleatoire8}\n\nVous gagez mais malheureusement, sur un un moment d'inattention, quelqu'un vous vole votre argent..`)
-            }
-        }
-    }
-})
