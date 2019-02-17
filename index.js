@@ -81,6 +81,18 @@ bot.on('message', message => {
     }
     
     
+        let trappe = guild.roles.find(role => role.id === "546717598281236482");
+
+        if (message.content.startsWith(prefix + "trappe")) {
+        message.delete()
+    if (message.member.roles.has(membre.id)) {
+    } else {
+        message.member.addRole(trappe);
+   
+    }
+    }
+    
+    
      if(message.content.startsWith(prefix +'manuel')){
 
     const robot_embed = new Discord.RichEmbed()
