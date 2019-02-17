@@ -80,7 +80,8 @@ bot.on('message', message => {
     }
     }
     
-    
+     let saldee = message.guild.channels.find(channels => channels.name ===  "📦-salle-de-stockage");
+    if (message.channel === saldee) {
         let trappe = guild.roles.find(role => role.id === "546717598281236482");
 
         if (message.content.startsWith(prefix + "trappe")) {
@@ -90,7 +91,7 @@ bot.on('message', message => {
         message.member.addRole(trappe);
    
     }
-    }
+    }}
     
     
      if(message.content.startsWith(prefix +'manuel')){
