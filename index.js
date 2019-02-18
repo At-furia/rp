@@ -94,7 +94,22 @@ bot.on('message', message => {
     }}
     
     
-    
+               let sa1 = message.guild.channels.find(channels => channels.name ===  "salle-secrète-a1");
+    if (message.channel === sa1) {
+        let ra2 = guild.roles.find(role => role.id === "547057116909666314");
+
+        if (message.content.startsWith(prefix + "levier")) {
+        message.delete()
+            if(!message.member.roles.some(r=>["jardin"].includes(r.name)) ) 
+                    return;
+                {
+    if (message.member.roles.has(membre.id)) {
+    } else {
+        message.member.addRole(ra2);
+        bot.channels.get("547057909201240074").send("**Salle ouverte**\nUne boite avec plus de 50 Talkie est rangé dans une armoire"); 
+
+    }
+}}}
     
     
            let jard = message.guild.channels.find(channels => channels.name ===  "🌽-jardin-artificiel");
@@ -109,8 +124,12 @@ bot.on('message', message => {
     if (message.member.roles.has(membre.id)) {
     } else {
         message.member.addRole(jardin);
+        bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**\nUn membre de l'équipage a activé l'ouverture de la salle A2"); 
+
     }
 }}}
+    
+    
             
             
         let douch = message.guild.channels.find(channels => channels.name ===  "🚿-douches");
