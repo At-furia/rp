@@ -110,7 +110,7 @@ bot.on('message', message => {
     } else {
         message.member.addRole(jardin);
     }
-}
+}}}
             
             
         let douch = message.guild.channels.find(channels => channels.name ===  "🚿-douches");
@@ -126,7 +126,7 @@ bot.on('message', message => {
     } else {
         message.member.addRole(douche);
     }
-}
+}}}
     
     
     
@@ -143,10 +143,10 @@ bot.on('message', message => {
     } else {
         message.member.addRole(cuis);
     }
-}
+}}}
             
             
-    }}
+    
     let smac = message.guild.channels.find(channels => channels.name ===  "🔧-salle-des-machines");
     if (message.channel === smac) {
         let machi = guild.roles.find(role => role.id === "547051057449140263");
