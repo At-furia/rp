@@ -269,6 +269,12 @@ if (message.member.roles.has(logé.id)) {
     if(message.content.startsWith(prefix +'cou')){
     bot.channels.get("541031829097152527").send(message.content.slice(4, message.content.length));
         } 
+   if(message.content.startsWith(prefix +'ss1')){
+    bot.channels.get("546718562115387412").send(message.content.slice(4, message.content.length));
+        } 
+    if(message.content.startsWith(prefix +'ss2')){
+    bot.channels.get("547057909201240074").send(message.content.slice(4, message.content.length));
+        } 
     }
     
     544901130950279198
