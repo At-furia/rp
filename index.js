@@ -94,6 +94,73 @@ bot.on('message', message => {
     }}
     
     
+    
+    
+    
+           let jard = message.guild.channels.find(channels => channels.name ===  "🌽-jardin-artificiel");
+    if (message.channel === jard) {
+        let jardin = guild.roles.find(role => role.id === "547051275661869061");
+
+        if (message.content.startsWith(prefix + "noir")||message.content === (prefix + "bouton noir")) {
+        message.delete()
+            if(!message.member.roles.some(r=>["douches"].includes(r.name)) ) 
+                    return;
+                {
+    if (message.member.roles.has(membre.id)) {
+    } else {
+        message.member.addRole(jardin);
+    }
+}
+            
+            
+        let douch = message.guild.channels.find(channels => channels.name ===  "🚿-douches");
+    if (message.channel === douch) {
+        let douche = guild.roles.find(role => role.id === "547051190785933313");
+
+        if (message.content.startsWith(prefix + "bleu")||message.content === (prefix + "bouton bleu")) {
+        message.delete()
+            if(!message.member.roles.some(r=>["cuisine"].includes(r.name)) ) 
+                    return;
+                {
+    if (message.member.roles.has(membre.id)) {
+    } else {
+        message.member.addRole(douche);
+    }
+}
+    
+    
+    
+    let cuisine = message.guild.channels.find(channels => channels.name ===  "🍽-cuisine");
+    if (message.channel === cuisine) {
+        let cuis = guild.roles.find(role => role.id === "547050872270618683");
+
+        if (message.content.startsWith(prefix + "blanc")||message.content === (prefix + "bouton blanc")) {
+        message.delete()
+            if(!message.member.roles.some(r=>["salle des machines"].includes(r.name)) ) 
+                    return;
+                {
+    if (message.member.roles.has(membre.id)) {
+    } else {
+        message.member.addRole(cuis);
+    }
+}
+            
+            
+    }}
+    let smac = message.guild.channels.find(channels => channels.name ===  "🔧-salle-des-machines");
+    if (message.channel === smac) {
+        let machi = guild.roles.find(role => role.id === "547051057449140263");
+
+        if (message.content.startsWith(prefix + "rouge")||message.content === (prefix + "bouton rouge")) {
+        message.delete()
+    if (message.member.roles.has(membre.id)) {
+    } else {
+        message.member.addRole(machi);
+    }
+    }}
+    
+    
+    
      if(message.content.startsWith(prefix +'manuel')){
 
     const robot_embed = new Discord.RichEmbed()
