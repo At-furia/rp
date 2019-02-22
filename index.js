@@ -103,7 +103,7 @@ bot.on('message', message => {
             if(!message.member.roles.some(r=>["jardin"].includes(r.name)) ) 
                     return;
                 
-    if (message.member.roles.has(membre.id)) {
+    if (message.member.roles.has(ra2.id)) {
     } else {
         message.member.addRole(ra2);
       //  bot.channels.get("547057909201240074").send("**Salle ouverte**\nUne boite avec plus de 50 Talkie est rangé dans une armoire"); 
@@ -124,7 +124,7 @@ bot.on('message', message => {
             if(!message.member.roles.some(r=>["douches"].includes(r.name)) ) 
                     return;
                 {
-    if (message.member.roles.has(membre.id)) {
+    if (message.member.roles.has(jardin.id)) {
     } else {
         message.member.addRole(jardin);
         bot.channels.get("544233264341057543").send("**Mise à jour du vaisseau :**\nUn membre de l'équipage a activé l'ouverture de la salle A2"); 
@@ -144,7 +144,7 @@ bot.on('message', message => {
             if(!message.member.roles.some(r=>["cuisine"].includes(r.name)) ) 
                     return;
                 {
-    if (message.member.roles.has(membre.id)) {
+    if (message.member.roles.has(douche.id)) {
     } else {
         message.member.addRole(douche);
     }
@@ -161,7 +161,7 @@ bot.on('message', message => {
             if(!message.member.roles.some(r=>["salle des machines"].includes(r.name)) ) 
                     return;
                 {
-    if (message.member.roles.has(membre.id)) {
+    if (message.member.roles.has(cuis.id)) {
     } else {
         message.member.addRole(cuis);
     }
@@ -175,7 +175,7 @@ bot.on('message', message => {
 
         if (message.content.startsWith(prefix + "rouge")||message.content === (prefix + "bouton rouge")) {
         message.delete()
-    if (message.member.roles.has(membre.id)) {
+    if (message.member.roles.has(machi.id)) {
     } else {
         message.member.addRole(machi);
     }
