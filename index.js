@@ -102,14 +102,17 @@ bot.on('message', message => {
         message.delete()
             if(!message.member.roles.some(r=>["jardin"].includes(r.name)) ) 
                     return;
-                {
+                
     if (message.member.roles.has(membre.id)) {
     } else {
         message.member.addRole(ra2);
-        bot.channels.get("547057909201240074").send("**Salle ouverte**\nUne boite avec plus de 50 Talkie est rangé dans une armoire"); 
+      //  bot.channels.get("547057909201240074").send("**Salle ouverte**\nUne boite avec plus de 50 Talkie est rangé dans une armoire"); 
 
+    
+}
+        
+        }
     }
-}}}
     
     
            let jard = message.guild.channels.find(channels => channels.name ===  "🌽-jardin-artificiel");
