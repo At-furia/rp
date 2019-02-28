@@ -18,7 +18,7 @@ bot.on('ready', () => {
     console.log("Bot Ready !");
     bot.user.setStatus("online")
 
-    }//) vjvtyghy,gufjyujkh
+    }) 
 
   bot.login(process.env.TOKEN);
 
